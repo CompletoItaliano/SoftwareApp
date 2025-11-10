@@ -1,0 +1,25 @@
+.upload-section {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 12px;
+}
+
+.btn-upload {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.files-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.files-list li {
+  margin: 8px 0;
+  color: #ddd;
+}
