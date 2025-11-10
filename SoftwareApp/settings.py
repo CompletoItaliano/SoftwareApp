@@ -77,14 +77,31 @@ WSGI_APPLICATION = 'SoftwareApp.wsgi.application'
 
 import pymysql
 pymysql.install_as_MySQLdb()
-import dj_database_url
+
 
 DATABASES = {
-    'default': dj_database_url.config(
-        default=os.environ.get('MYSQL_URL'),
-        conn_max_age=600,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('MYSQL_DATABASE'),
+        'USER': os.environ.get('MYSQLUSER'),
+        'PASSWORD': os.environ.get('MYSQLPASSWORD'),
+        'HOST': os.environ.get('MYSQLHOST'),
+        'PORT': os.environ.get('MYSQLPORT'),
+        'OPTIONS': {
+            'charset': 'utf8mb4',
+        }
+    }
 }
+
+
+
+######
+#DATABASES = {
+   # 'default': dj_database_url.config(
+  #      default=os.environ.get('MYSQL_URL'),
+ #       conn_max_age=600,
+#  )
+###}
 
 
 AUTH_PASSWORD_VALIDATORS = [

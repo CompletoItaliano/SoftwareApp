@@ -1,2 +1,2 @@
-release: python manage.py migrate && python manage.py collectstatic --noinput && python create_superuser.py
+release: python manage.py migrate && python manage.py collectstatic --noinput
 web: gunicorn SoftwareApp.wsgi
