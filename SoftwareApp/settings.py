@@ -75,7 +75,8 @@ WSGI_APPLICATION = 'SoftwareApp.wsgi.application'
 
 
 
-
+import pymysql
+pymysql.install_as_MySQLdb()
 import dj_database_url
 
 DATABASES = {
@@ -143,3 +144,7 @@ LOGGING = {
         'level': 'WARNING',  
     }
 }
+
+from dotenv import load_dotenv
+
+load_dotenv()
